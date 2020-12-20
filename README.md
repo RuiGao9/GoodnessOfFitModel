@@ -3,3 +3,5 @@
 Welcome to point out my faults by sending me email at rui.gao@aggiemail.usu.edu<br>
 
 "gfit.py" is the function to gain goodness-of-fit statistics.
+
+This repository will be updated accordingly.
