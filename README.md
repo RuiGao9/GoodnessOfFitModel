@@ -15,6 +15,7 @@ Email: iqiukp@outlook.com
 -------------------------------------------------------------------
 
 ## Main features
+This is a test and suppose to see some difference online!!!!!!!
 
 * Easy-used API for training and testing RVM model
 * Multiple kinds of kernel functions
