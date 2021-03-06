@@ -1,8 +1,8 @@
 # Content of this repository
 Three files are contained in this repository.<br>
-"Manual.pdf" explains details about this repository.<br>
-"gfit.py" is the function which can be called.<br>
-"README.md" shows a brief information about this repository.<br>
+- "Manual.pdf" explains details about this repository.<br>
+- "gfit.py" is the function which can be called.<br>
+- "README.md" shows a brief information about this repository.<br>
 
 # Considered goodness-of-fit statistics
 7 statistics are included in this function called "gfit.py". They are:<br>
