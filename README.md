@@ -12,5 +12,6 @@ MSE: Mean Squared Error<br>
 Two input vectors, observations and estimations, are supposed to be provided at least, and another two, “type_statistic” and “residual” are optional. As a result, t score, p value, and the selected goodness-of-fit statistic are returned by this python function. This python function package mainly contains 3 parts: residual plot (optional), goodness-of-fit statistics, and the student’s t test (optional).
 
 Details can be found in the attached manual. This repository is supposed to be modified later accordingly. If there is any mistakes, welcome leave comments and send them to me.<br>
+
 Rui Gao<br>
 rui.gao@aggiemail.usu.edu
