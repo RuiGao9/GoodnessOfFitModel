@@ -14,6 +14,7 @@ def gfit(true,pred,type_statistic='1',residual='Yes'):
     type_statistic='5': Coefficient of Determination - R2
     type_statistic='6': Coefficient of Efficiency - E
     type_statistic='7': Mean Squared Error - MSE
+    type_statistic='8': Standard deviation of the residual - RSD
     '''
     
     # Size of two vectors should be the same
@@ -67,5 +68,8 @@ def gfit(true,pred,type_statistic='1',residual='Yes'):
     elif type_statistic == '7':
         out = diff**2
         out = out.mean()
+    # Standard deviation of the residual (RSD)
+    elif type_statistic == '8':
+        out = np.std(diff)
         
     return(out)  
