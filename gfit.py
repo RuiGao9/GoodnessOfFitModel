@@ -15,6 +15,7 @@ def gfit(true,pred,type_statistic='1',residual='Yes'):
     type_statistic='6': Coefficient of Efficiency - E
     type_statistic='7': Mean Squared Error - MSE
     type_statistic='8': Standard deviation of the residual - RSD
+    type_statistic='9': Coefficient of variation regarding the residual between the 'true' and predication - CV
     '''
     
     # Size of two vectors should be the same
@@ -71,5 +72,9 @@ def gfit(true,pred,type_statistic='1',residual='Yes'):
     # Standard deviation of the residual (RSD)
     elif type_statistic == '8':
         out = np.std(diff)
+    # Coefficient of variation (CV) regarding the residual
+    elif type_Statistic == '9':
+        out = np.std(diff)/np.mean(diff)
+        
         
     return(out)  
