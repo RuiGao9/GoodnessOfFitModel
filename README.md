@@ -5,7 +5,7 @@ Three files are contained in this repository.<br>
 - "README.md" shows a brief information about this repository.<br>
 
 # Considered goodness-of-fit statistics
-8 statistics are included in this function called "gfit.py". They are:<br>
+9 statistics are included in this function called "gfit.py". They are:<br>
 - `RMSE`: Root Mean Square Error<br>
 - `RRMSE`: Relative Root Mean Square Error<br>
 - `MAE`: Mean Absolute Error<br>
@@ -13,7 +13,8 @@ Three files are contained in this repository.<br>
 - `R2`: coefficient of determination<br>
 - `E`: coefficient of efficiency<br>
 - `MSE`: Mean Squared Error<br>
-- `RSD`: The standard deviation of the residual
+- `RSD`: The standard deviation of the residual<br>
+- `CV`: The coefficient of variation regarding the residual between the "true" and prediction values
 
 # Brief introduction of this repository
 Two input vectors, observations and estimations, are supposed to be provided at least, and another two, “type_statistic” and “residual” are optional. As a result, t score, p value, and the selected goodness-of-fit statistic are returned by this python function. This python function package mainly contains 3 parts: residual plot (optional), goodness-of-fit statistics, and the student’s t test (optional).
