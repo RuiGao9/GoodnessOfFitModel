@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/290397319.svg)](https://doi.org/10.5281/zenodo.15871863)
+![Visitors Badge](https://visitor-badge.laobi.icu/badge?page_id=RuiGao9.GoodnessOfFitModel)<br>
 # Content of this repository
 Three files are contained in this repository.<br>
 - "Manual.pdf" explains details about this repository.<br>
