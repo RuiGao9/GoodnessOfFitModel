@@ -24,4 +24,4 @@ Two input vectors, observations and estimations, are supposed to be provided at 
 Details can be found in the attached manual. This repository is supposed to be modified later accordingly. If there is any mistakes, welcome leave comments and send them to me.<br>
 
 Rui Gao<br>
-rui.gao@aggiemail.usu.edu
+rui.ray.gao@gmail.com
