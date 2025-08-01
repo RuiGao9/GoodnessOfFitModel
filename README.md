@@ -23,6 +23,24 @@ This repository supports my research by providing tools to visualize model perfo
 Two input vectors, observations (true) and estimations (pred), are supposed to be provided at least, and another two, “num_decimal” and “residual” are optional.<br> 
 As a result, 10 statistics are returned by this python function. This output of this function can be mainly divided into 2 parts: goodness-of-fit statistics and residual plot (optional).
 
+# Citation
+If you use this repository in your work, please cite it using the following DOI:
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16700596.svg)](https://doi.org/10.5281/zenodo.16700596)
+
+**BibTeX:**
+```bibtex
+@misc{gao2025apogee,
+  author       = {Rui Gao},
+  title        = {Goodness of Fit Model},
+  year         = {2025},
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.16700596},
+  url          = {https://doi.org/10.5281/zenodo.16700596}
+}
+```
+
+# Contact inforamtion is issues were found:
 Any found issues are appreciated to contact Rui at<br> 
 Rui.Ray.Gao@gmail.com <br>
 RuiGao@UCMerced.edu
