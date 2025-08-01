@@ -30,7 +30,7 @@ If you use this repository in your work, please cite it using the following DOI:
 
 **BibTeX:**
 ```bibtex
-@misc{gao2025apogee,
+@misc{gao2025goodfit,
   author       = {Rui Gao},
   title        = {Goodness of Fit Model},
   year         = {2025},
@@ -40,7 +40,7 @@ If you use this repository in your work, please cite it using the following DOI:
 }
 ```
 
-# Contact inforamtion is issues were found:
+# Contact information is issues were found:
 Any found issues are appreciated to contact Rui at<br> 
 Rui.Ray.Gao@gmail.com <br>
 RuiGao@UCMerced.edu
