@@ -23,4 +23,6 @@ This repository supports my research by providing tools to visualize model perfo
 Two input vectors, observations (true) and estimations (pred), are supposed to be provided at least, and another two, “num_decimal” and “residual” are optional.<br> 
 As a result, 10 statistics are returned by this python function. This output of this function can be mainly divided into 2 parts: goodness-of-fit statistics and residual plot (optional).
 
-Any found issues are appreciated to contact Rui at Rui.Ray.Gao@gmail.com or RuiGao@UCMerced.edu.
+Any found issues are appreciated to contact Rui at<br> 
+Rui.Ray.Gao@gmail.com <br>
+RuiGao@UCMerced.edu
