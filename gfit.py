@@ -13,10 +13,8 @@ def gfit(true, pred, num_decimal=3, residual='Yes'):
         '3': MAE
         '4': r (Pearson correlation)
         '5': R2
-        '6': E (coefficient of efficiency)
-        '7': MSE
-        '8': RSD (std of residual)
-        '9': CV (coefficient of variation of residual)
+        '6': MSE
+        '7': RSD (std of residual)
         Otherwise, prints and returns all statistics.
 
     Returns:
@@ -73,7 +71,7 @@ def gfit(true, pred, num_decimal=3, residual='Yes'):
     print(f'Bias: {bias:{fmt}}')
     print(f'Pearson correlation (r): {r:{fmt}}')
     print(f'R squared (R2): {r2:{fmt}}')
-    print(f'P-value: {p_value:.2e}')
+    print(f'p-value: {p_value:.2e}')
     print(f'Willmott\'s index of agreement (d): {d:{fmt}}')
     print(f'Standard deviation of residual (RSD): {rsd:{fmt}}')
 

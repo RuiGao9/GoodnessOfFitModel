@@ -6,7 +6,7 @@ This repository supports my research by providing tools to visualize model perfo
 - "README.md" offers a brief overview of the repository and its purpose.<br>
 
 # Considered goodness-of-fit statistics
-9 statistics are included in this function called "gfit.py". They are:<br>
+10 statistics are included in this function called "gfit.py". They are:<br>
 - `MSE`: Mean Squared Error. Square of the unit of the output variable.<br>
 - `RMSE`: Root Mean Square Error. The unit is the same as output variable.<br>
 - `Bias`: Bias. The unit is the same as output variable.<br>
@@ -19,9 +19,7 @@ This repository supports my research by providing tools to visualize model perfo
 - `RSD`: The standard deviation of the residual. The unit is the same as output variable.<br>
 
 # Brief introduction of this repository
-Two input vectors, observations and estimations, are supposed to be provided at least, and another two, “type_statistic” and “residual” are optional. As a result, t score, p value, and the selected goodness-of-fit statistic are returned by this python function. This python function package mainly contains 3 parts: residual plot (optional), goodness-of-fit statistics, and the student’s t test (optional).
+Two input vectors, observations (true) and estimations (pred), are supposed to be provided at least, and another two, “num_decimal” and “residual” are optional.<br> 
+As a result, 10 statistics are returned by this python function. This output of this function can be mainly divided into 2 parts: goodness-of-fit statistics and residual plot (optional).
 
-Details can be found in the attached manual. This repository is supposed to be modified later accordingly. If there is any mistakes, welcome leave comments and send them to me.<br>
-
-Rui Gao<br>
-rui.ray.gao@gmail.com
+Any found issues are appreciated to contact Rui at Rui.Ray.Gao@gmail.com or RuiGao@UCMerced.edu.
