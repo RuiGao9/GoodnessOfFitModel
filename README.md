@@ -1,5 +1,6 @@
 [![DOI](https://zenodo.org/badge/290397319.svg)](https://doi.org/10.5281/zenodo.15871863)
 ![Visitors Badge](https://visitor-badge.laobi.icu/badge?page_id=RuiGao9.GoodnessOfFitModel)<br>
+
 # Content of this repository
 This repository supports my research by providing tools to visualize model performance, particularly through numerous 1:1 scatter plots. It includes functionalities for displaying statistical summaries of those scatter plots as well as generating residual plots. The repository contains two files.<br>
 - "gfit.py" contains the main function that can be called to perform analysis.<br>
