@@ -22,43 +22,32 @@ The respository contains two files:
 - `README.md`: this overview and usage guide
 
 # Considered goodness-of-fit statistics
-10 statistics are included in this function called "gfit.py". They are:<br>
+10 statistics are included in this function "gfit.py". They are:<br>
 - `MSE`: Mean Squared Error. Square of the unit of the output variable.<br>
+Measures the **average squared difference** between observed and predicted values. Lower values indicate better fit.
 - `RMSE`: Root Mean Square Error. The unit is the same as output variable.<br>
+The square root of MSE; shows the **average error** in the same units as the data.
 - `Bias`: Bias. The unit is the same as output variable.<br>
-- `r`: correlation coefficient. Unitless.<br>
+The average difference between predicted and observed values. Indicates if predictions are systematically too high or too low.
+- `r`: Correlation coefficient. Unitless.<br>
+Measures the strength and direction of the linear relationship between observed and predicted values (ranges from -1 to 1).
 - `p-value`: p-value. Unitless.<br>
   - It tells how likely it is that the result happened by random chance.
   - A **small p-value** (usually less than 0.05) means the result is probably not just random, so there is likely a real effect of relationship.
   - A **large p-value** means the result could esaily happen by chance, so there may not be a real effect.
 - `d`: Willmoot\'s index of agreement. Unitless.<br>
-- `R2`: coefficient of determination. Unitless.<br>
+Measures the degree of model prediction error (ranges from 0 to 1, with 1 being perfect agreement).
+- `R2`: Coefficient of determination. Unitless.<br>
+Shows the proportion of variance in observed values explained by the predictions (ranges from 0 to 1).
 - `MAE`: Mean Absolute Error. The unit is the same as output variable.<br>
+The average of the absolute differences between observed and predicted values.
 - `RRMSE`: Relative Root Mean Square Error. %.<br>
+RMSE expressed as a percentage of the mean observed value.
 - `RSD`: The standard deviation of the residual. The unit is the same as output variable.<br>
-
-# Considered goodness-of-fit statistics
-10 statistics are included in the function "gfit.py". They are:
-
-- `MSE`: Mean Squared Error. Measures the average squared difference between observed and predicted values. Lower values indicate better fit.
-- `RMSE`: Root Mean Square Error. The square root of MSE; shows the average error in the same units as the data.
-- `Bias`: The average difference between predicted and observed values. Indicates if predictions are systematically too high or too low.
-- `r`: Correlation coefficient. Measures the strength and direction of the linear relationship between observed and predicted values (ranges from -1 to 1).
-- `p-value`: Indicates how likely it is that the observed correlation happened by random chance.  
-  - A **small p-value** (usually less than 0.05) means the result is probably not just random, so there is likely a real effect or relationship.
-  - A **large p-value** means the result could easily happen by chance, so there may not be a real effect.
-- `d`: Willmott's index of agreement. Measures the degree of model prediction error (ranges from 0 to 1, with 1 being perfect agreement).
-- `R²`: Coefficient of determination. Shows the proportion of variance in observed values explained by the predictions (ranges from 0 to 1).
-- `MAE`: Mean Absolute Error. The average of the absolute differences between observed and predicted values.
-- `RRMSE`: Relative Root Mean Square Error. RMSE expressed as a percentage of the mean observed value.
-- `RSD`: Standard deviation of the residuals. Indicates how spread out the residuals (errors)
-
-# Brief introduction of this repository
-Two input vectors, observations (true) and estimations (pred), are supposed to be provided at least, and another two, “num_decimal” and “residual” are optional.<br> 
-As a result, 10 statistics are returned by this python function. This output of this function can be mainly divided into 2 parts: goodness-of-fit statistics and residual plot (optional).
+Indicates how spread out the residuals (errors)
 
 # Citation
-If you use this repository in your work, please cite it using the following DOI:
+If you also use this repository in your work, please cite it using the following DOI:
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16700596.svg)](https://doi.org/10.5281/zenodo.16700596)
 
@@ -77,4 +66,4 @@ If you use this repository in your work, please cite it using the following DOI:
 # Contact information is issues were found:
 Any found issues are appreciated to contact Rui at<br> 
 Rui.Ray.Gao@gmail.com <br>
-RuiGao@UCMerced.edu
+RuiGao@UCMerced.edu <br>
