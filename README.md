@@ -2,9 +2,23 @@
 ![Visitors Badge](https://visitor-badge.laobi.icu/badge?page_id=RuiGao9.GoodnessOfFitModel)<br>
 
 # Content of this repository
-This repository supports my research by providing tools to visualize model performance, particularly through numerous 1:1 scatter plots. It includes functionalities for displaying statistical summaries of those scatter plots as well as generating residual plots. The repository contains two files.<br>
-- "gfit.py" contains the main function that can be called to perform analysis.<br>
-- "README.md" offers a brief overview of the repository and its purpose.<br>
+This repository is a tool to supports my research: evaluating and visualizing model performance.
+**Input:**
+- At minimum, you need to provide two vectors:
+  - `true`: observed (actual) values
+  - `pred`: predicted values
+- Optional inputs allow you to control the number of decimal places for statistics and whether to generate plots.
+
+**Output:**
+- The main function (`gfit.py`) returns a set of goodness-of-fit statistics, including MSE, RMSE, MAE, R2, correlation, bias, and more.
+- Optionally, you can generate plots to visualize model performance:
+  - 1:1 scatter plot (predicted vs. observed)
+  - Q-Q plot of residuals
+  - Residual plot
+
+The respository contains two files:
+- `gfit.py`: the main analysis function
+- `README.md`: this overview and usage guide
 
 # Considered goodness-of-fit statistics
 10 statistics are included in this function called "gfit.py". They are:<br>
