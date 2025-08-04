@@ -1,4 +1,4 @@
-def gfit(true, pred, num_decimal=3, residual='Yes'):
+def gfit(true, pred, num_decimal=3, plots='Yes'):
     """
     Calculates goodness-of-fit statistics and optionally plots residuals.
 
@@ -23,7 +23,7 @@ def gfit(true, pred, num_decimal=3, residual='Yes'):
     import numpy as np
     import matplotlib.pyplot as plt
     import math
-    import statistics
+    import scipy.stats as stats
     from scipy.stats import pearsonr
 
     true = np.asarray(true)
@@ -36,13 +36,43 @@ def gfit(true, pred, num_decimal=3, residual='Yes'):
     diff = true - pred
     mean_true = true.mean()
 
-    # Residual plot
-    if residual == 'Yes':
-        plt.figure(figsize=(5, 2.5))
-        plt.scatter(range(1, 1 + len(true)), diff)
-        plt.plot(range(1, 1 + len(true)), [0] * len(true), 'r--')
-        plt.xlim(0, len(true) + 1)
-        plt.ylabel("Residual")
+    # Plots or not
+    if plots == 'Yes':
+        import matplotlib.gridspec as gridspec
+
+        fig = plt.figure(figsize=(10, 6))
+        gs = gridspec.GridSpec(2, 2, height_ratios=[1, 0.7])
+
+        # 1:1 scatter plot (top left)
+        ax1 = fig.add_subplot(gs[0, 0])
+        max_value = np.max([np.max(true), np.max(pred)])
+        min_value = np.min([np.min(true), np.min(pred)])
+        ax1.scatter(pred, true, color='blue', label='Pred vs Observ')
+        ax1.plot([min_value, max_value], [min_value, max_value], 'r--', label='1:1 Line')
+        ax1.set_xlim(min_value, max_value)
+        ax1.set_ylim(min_value, max_value)
+        ax1.set_xlabel('Predictions')
+        ax1.set_ylabel('Observations')
+        ax1.set_title('Scatter Plot with 1:1 Line')
+        ax1.legend()
+        ax1.grid(False)
+        ax1.set_aspect('equal', adjustable='box')
+
+        # Q-Q plot (top right)
+        ax2 = fig.add_subplot(gs[0, 1])
+        stats.probplot(diff, dist="norm", plot=ax2)
+        ax2.set_title("Q-Q Plot of Residuals")
+
+        # Residual plot (bottom, spanning both columns)
+        ax3 = fig.add_subplot(gs[1, :])
+        ax3.scatter(range(1, 1 + len(true)), diff)
+        ax3.plot(range(1, 1 + len(true)), [0] * len(true), 'r--')
+        ax3.set_xlim(0, len(true) + 1)
+        ax3.set_ylabel("Residual")
+        ax3.set_xlabel("Index")
+        ax3.set_title("Residual Plot")
+
+        plt.tight_layout()
         plt.show()
 
     # Statistics
