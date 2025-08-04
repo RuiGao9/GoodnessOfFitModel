@@ -37,6 +37,22 @@ The respository contains two files:
 - `RRMSE`: Relative Root Mean Square Error. %.<br>
 - `RSD`: The standard deviation of the residual. The unit is the same as output variable.<br>
 
+# Considered goodness-of-fit statistics
+10 statistics are included in the function "gfit.py". They are:
+
+- `MSE`: Mean Squared Error. Measures the average squared difference between observed and predicted values. Lower values indicate better fit.
+- `RMSE`: Root Mean Square Error. The square root of MSE; shows the average error in the same units as the data.
+- `Bias`: The average difference between predicted and observed values. Indicates if predictions are systematically too high or too low.
+- `r`: Correlation coefficient. Measures the strength and direction of the linear relationship between observed and predicted values (ranges from -1 to 1).
+- `p-value`: Indicates how likely it is that the observed correlation happened by random chance.  
+  - A **small p-value** (usually less than 0.05) means the result is probably not just random, so there is likely a real effect or relationship.
+  - A **large p-value** means the result could easily happen by chance, so there may not be a real effect.
+- `d`: Willmott's index of agreement. Measures the degree of model prediction error (ranges from 0 to 1, with 1 being perfect agreement).
+- `R²`: Coefficient of determination. Shows the proportion of variance in observed values explained by the predictions (ranges from 0 to 1).
+- `MAE`: Mean Absolute Error. The average of the absolute differences between observed and predicted values.
+- `RRMSE`: Relative Root Mean Square Error. RMSE expressed as a percentage of the mean observed value.
+- `RSD`: Standard deviation of the residuals. Indicates how spread out the residuals (errors)
+
 # Brief introduction of this repository
 Two input vectors, observations (true) and estimations (pred), are supposed to be provided at least, and another two, “num_decimal” and “residual” are optional.<br> 
 As a result, 10 statistics are returned by this python function. This output of this function can be mainly divided into 2 parts: goodness-of-fit statistics and residual plot (optional).
