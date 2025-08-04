@@ -3,6 +3,7 @@
 
 # Content of this repository
 This repository is a tool to supports my research: evaluating and visualizing model performance.
+
 **Input:**
 - At minimum, you need to provide two vectors:
   - `true`: observed (actual) values
@@ -10,7 +11,7 @@ This repository is a tool to supports my research: evaluating and visualizing mo
 - Optional inputs allow you to control the number of decimal places for statistics and whether to generate plots.
 
 **Output:**
-- The main function (`gfit.py`) returns a set of goodness-of-fit statistics, including MSE, RMSE, MAE, R2, correlation, bias, and more.
+- The main function (`gfit.py`) returns a set of goodness-of-fit statistics, including MSE, RMSE, MAE, R², correlation, bias, and more.
 - Optionally, you can generate plots to visualize model performance:
   - 1:1 scatter plot (predicted vs. observed)
   - Q-Q plot of residuals
