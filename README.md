@@ -13,6 +13,9 @@ This repository supports my research by providing tools to visualize model perfo
 - `Bias`: Bias. The unit is the same as output variable.<br>
 - `r`: correlation coefficient. Unitless.<br>
 - `p-value`: p-value. Unitless.<br>
+  - It tells how likely it is that the result happened by random chance.
+  - A **small p-value** (usually less than 0.05) means the result is probably not just random, so there is likely a real effect of relationship.
+  - A **large p-value** means the result could esaily happen by chance, so there may not be a real effect.
 - `d`: Willmoot\'s index of agreement. Unitless.<br>
 - `R2`: coefficient of determination. Unitless.<br>
 - `MAE`: Mean Absolute Error. The unit is the same as output variable.<br>
