@@ -59,8 +59,8 @@ If you also use this repository in your work, please cite it using the following
   version      = v1.1.1,
   year         = {2025},
   publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.16700596},
-  url          = {https://doi.org/10.5281/zenodo.16700596}
+  doi          = {10.5281/zenodo.16739769},
+  url          = {https://doi.org/10.5281/zenodo.16739769}
 }
 ```
 
