@@ -6,19 +6,23 @@ def gfit(true, pred, num_decimal=3, plots='Yes'):
     true (array-like): Observed values.
     pred (array-like): Predicted values.
     num_decimal (int): Number of decimals for printed output.
-    residual (str): If 'Yes', show residual plot.
+    plots (str): If 'Yes', show residual plot and Q-Q plot.
     type_statistic (str or None): If set, returns only the specified statistic:
-        '1': RMSE
-        '2': RRMSE
-        '3': MAE
-        '4': r (Pearson correlation)
-        '5': R2
-        '6': MSE
-        '7': RSD (std of residual)
-        Otherwise, prints and returns all statistics.
-
+        
     Returns:
-    Returns a tuple: (n, mse, rmse, bias, r, p_value, d, r2, mae, rrmse, rsd)
+    Returns a tuple: (n, mse, rmse, bias, r, p_value, r2_simple, r2_standard, d, mae, rrmse, rsd)
+        1. The number of cases (n)
+        2. Mean Square Error (MSE)
+        3. Root Mean Square Error (RMSE)
+        4. Bias
+        5. Pearson correlation coefficient (r)
+        6. p-value of the correlation
+        7. r-squared (Pearson^2)
+        8. Standard R-squared (R2)
+        9. Willmott's index of agreement (d)
+        10. Mean Absolute Error (MAE)
+        11. Relative RMSE (RRMSE)
+        12. Standard Deviation of Residuals (RSD)
     """
     import numpy as np
     import matplotlib.pyplot as plt
@@ -80,11 +84,20 @@ def gfit(true, pred, num_decimal=3, plots='Yes'):
     mse = np.mean(diff ** 2)
     rmse = math.sqrt(mse)
     bias = np.mean(diff)
+
     r, p_value = pearsonr(true, pred)
-    r2 = r ** 2
+    
+    # Pearson correlation squared
+    r2_simple = r ** 2
+    # R squared value (standard) in sklearn style
+    ss_res = np.sum((true - pred) ** 2)
+    ss_tot = np.sum((true - mean_true) ** 2)
+    r2_standard = 1- (ss_res / ss_tot)
+
     mae = np.mean(np.abs(diff))
     rrmse = rmse / mean_true * 100 if mean_true != 0 else np.nan
     rsd = np.std(diff)
+
     # Willmott's index of agreement
     tmp_1 = np.sum((true - pred) ** 2)
     tmp_2 = np.mean(true)
@@ -100,9 +113,10 @@ def gfit(true, pred, num_decimal=3, plots='Yes'):
     print(f'Mean absolute error (MAE): {mae:{fmt}}')
     print(f'Bias: {bias:{fmt}}')
     print(f'Pearson correlation (r): {r:{fmt}}')
-    print(f'R squared (R2): {r2:{fmt}}')
+    print(f'r-squared, Pearson^2 (r2): {r2_simple:{fmt}}')
+    print(f'Standard (R2): {r2_standard:{fmt}}')
     print(f'p-value: {p_value:.2e}')
     print(f'Willmott\'s index of agreement (d): {d:{fmt}}')
     print(f'Standard deviation of residual (RSD): {rsd:{fmt}}')
 
-    return (n, mse, rmse, bias, r, p_value, d, r2, mae, rrmse, rsd)
+    return (n, mse, rmse, bias, r, p_value, r2_simple, r2_standard, d, mae, rrmse, rsd)
