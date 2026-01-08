@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/290397319.svg)](https://doi.org/10.5281/zenodo.15871863)
+[![DOI](https://zenodo.org/badge/16739769.svg)](https://doi.org/10.5281/zenodo.16739769)
 ![Visitors Badge](https://visitor-badge.laobi.icu/badge?page_id=RuiGao9.GoodnessOfFitModel)<br>
 
 # Content of this repository
@@ -49,7 +49,7 @@ Indicates how spread out the residuals (errors)
 # Citation
 If you also use this repository in your work, please cite it using the following DOI:
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16700596.svg)](https://doi.org/10.5281/zenodo.16700596)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16739769.svg)](https://doi.org/10.5281/zenodo.16739769)
 
 **BibTeX:**
 ```bibtex
