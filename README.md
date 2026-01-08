@@ -56,6 +56,7 @@ If you also use this repository in your work, please cite it using the following
 @misc{gao2025goodfit,
   author       = {Rui Gao},
   title        = {Goodness of Fit Model},
+  version      = v1.1.1,
   year         = {2025},
   publisher    = {Zenodo},
   doi          = {10.5281/zenodo.16700596},
