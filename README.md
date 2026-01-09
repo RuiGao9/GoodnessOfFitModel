@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/16739769.svg)](https://doi.org/10.5281/zenodo.16739769)
+[![DOI](https://zenodo.org/badge/18189307.svg)](https://doi.org/10.5281/zenodo.18189307)
 ![Visitors Badge](https://visitor-badge.laobi.icu/badge?page_id=RuiGao9.GoodnessOfFitModel)<br>
 
 # Content of this repository
@@ -49,18 +49,18 @@ Indicates how spread out the residuals (errors)
 # Citation
 If you also use this repository in your work, please cite it using the following DOI:
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16739769.svg)](https://doi.org/10.5281/zenodo.16739769)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18189307.svg)](https://doi.org/10.5281/zenodo.18189307)
 
 **BibTeX:**
 ```bibtex
 @misc{gao2025goodfit,
   author       = {Rui Gao},
   title        = {Goodness of Fit Model},
-  version      = v1.1.1,
+  version      = v1.1.2,
   year         = {2025},
   publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.16739769},
-  url          = {https://doi.org/10.5281/zenodo.16739769}
+  doi          = {10.5281/zenodo.18189307},
+  url          = {https://doi.org/10.5281/zenodo.18189307}
 }
 ```
 
