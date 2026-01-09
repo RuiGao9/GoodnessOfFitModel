@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/18189307.svg)](https://doi.org/10.5281/zenodo.18189307)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18189307.svg)](https://doi.org/10.5281/zenodo.18189307)
 ![Visitors Badge](https://visitor-badge.laobi.icu/badge?page_id=RuiGao9.GoodnessOfFitModel)<br>
 
 # Content of this repository
