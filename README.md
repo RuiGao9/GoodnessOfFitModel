@@ -1,5 +1,5 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18189307.svg)](https://doi.org/10.5281/zenodo.18189307)
-![Visitors Badge](https://visitor-badge.laobi.icu/badge?page_id=RuiGao9.GoodnessOfFitModel)<br>
+[![Visitors Badge](https://visitor-badge.laobi.icu/badge?page_id=RuiGao9.GoodnessOfFitModel)<br>
 
 # Content of this repository
 This repository is a tool to supports my research: evaluating and visualizing model performance.
