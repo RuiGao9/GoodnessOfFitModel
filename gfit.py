@@ -32,6 +32,11 @@ def gfit(true, pred, num_decimal=3, plots='Yes'):
 
     true = np.asarray(true)
     pred = np.asarray(pred)
+    
+    # Take off rows containing NaN
+    mask = np.isfinite(true) & np.isfinite(pred)
+    true = true[mask]
+    pred = pred[mask]
 
     if true.shape != pred.shape:
         print("\nError! The size of vector 1 does not match vector 2!\n")
