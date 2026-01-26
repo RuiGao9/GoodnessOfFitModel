@@ -1,4 +1,4 @@
-def gfit(true, pred, num_decimal=3, plots='Yes'):
+def gfit(true, pred, num_decimal=3, plots='Yes', show_results='Yes'):
     """
     Calculates goodness-of-fit statistics and optionally plots residuals.
 
@@ -7,6 +7,7 @@ def gfit(true, pred, num_decimal=3, plots='Yes'):
     pred (array-like): Predicted values.
     num_decimal (int): Number of decimals for printed output.
     plots (str): If 'Yes', show residual plot and Q-Q plot.
+    show_results (str): If 'Yes', show those evaluation metrics.
     type_statistic (str or None): If set, returns only the specified statistic:
         
     Returns:
@@ -109,19 +110,22 @@ def gfit(true, pred, num_decimal=3, plots='Yes'):
     tmp_3 = np.sum((np.abs(true - tmp_2) + np.abs(pred - tmp_2)) ** 2)
     d = 1 - (tmp_1 / tmp_3) if tmp_3 != 0 else np.nan
 
-    fmt = f".{num_decimal}f"
-    # Print all statistics
-    print(f'Number of cases: {n:.0f}')
-    print(f'Mean square error (MSE): {mse:{fmt}}')
-    print(f'Root mean square error (RMSE): {rmse:{fmt}}')
-    print(f'Relative RMSE (RRMSE): {rrmse:{fmt}}')
-    print(f'Mean absolute error (MAE): {mae:{fmt}}')
-    print(f'Bias: {bias:{fmt}}')
-    print(f'Pearson correlation (r): {r:{fmt}}')
-    print(f'r-squared, Pearson^2 (r2): {r2_simple:{fmt}}')
-    print(f'Standard (R2): {r2_standard:{fmt}}')
-    print(f'p-value: {p_value:.2e}')
-    print(f'Willmott\'s index of agreement (d): {d:{fmt}}')
-    print(f'Standard deviation of residual (RSD): {rsd:{fmt}}')
+    if show_results == 'Yes':
+        fmt = f".{num_decimal}f"
+        # Print all statistics
+        print(f'Number of cases: {n:.0f}')
+        print(f'Mean square error (MSE): {mse:{fmt}}')
+        print(f'Root mean square error (RMSE): {rmse:{fmt}}')
+        print(f'Relative RMSE (RRMSE): {rrmse:{fmt}}')
+        print(f'Mean absolute error (MAE): {mae:{fmt}}')
+        print(f'Bias: {bias:{fmt}}')
+        print(f'Pearson correlation (r): {r:{fmt}}')
+        print(f'r-squared, Pearson^2 (r2): {r2_simple:{fmt}}')
+        print(f'Standard (R2): {r2_standard:{fmt}}')
+        print(f'p-value: {p_value:.2e}')
+        print(f'Willmott\'s index of agreement (d): {d:{fmt}}')
+        print(f'Standard deviation of residual (RSD): {rsd:{fmt}}')
+    else:
+        continue
 
     return (n, mse, rmse, bias, r, p_value, r2_simple, r2_standard, d, mae, rrmse, rsd)
