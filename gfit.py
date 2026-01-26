@@ -126,6 +126,6 @@ def gfit(true, pred, num_decimal=3, plots='Yes', show_results='Yes'):
         print(f'Willmott\'s index of agreement (d): {d:{fmt}}')
         print(f'Standard deviation of residual (RSD): {rsd:{fmt}}')
     else:
-        continue
+        pass
 
     return (n, mse, rmse, bias, r, p_value, r2_simple, r2_standard, d, mae, rrmse, rsd)
