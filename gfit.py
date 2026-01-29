@@ -92,17 +92,25 @@ def gfit(true, pred, num_decimal=3, plots='Yes', show_results='Yes'):
     bias = np.mean(diff)
 
     # protect r
-    if np.std(true) < 1e-12 or np.std(pred) < 1e-12:
+    # Pearson r can be undefined / numerically unstable when either series is (nearly) constant
+    # (std close to 0 makes the correlation denominator ~0). In that case we return NaN to avoid misleading r/p-values.
+    if np.std(true) < 1e-8 or np.std(pred) < 1e-8:
         r, p_value = np.nan, np.nan
     else:
         r, p_value = pearsonr(true, pred)
     
     # Pearson correlation squared
     r2_simple = r ** 2
+    
     # R squared value (standard) in sklearn style
+    # Standard R2 becomes undefined / unstable when the target variance is (near) zero (SS_tot close to 0).
+    # We guard against this and return NaN instead of reporting a meaningless R2.
     ss_res = np.sum((true - pred) ** 2)
     ss_tot = np.sum((true - mean_true) ** 2)
-    r2_standard = 1- (ss_res / ss_tot)
+    if ss_tot < 1e-8:
+        r2_standard = np.nan
+    else:
+        r2_standard = 1- (ss_res / ss_tot)
 
     mae = np.mean(np.abs(diff))
     rrmse = rmse / mean_true * 100 if mean_true != 0 else np.nan
