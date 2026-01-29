@@ -91,7 +91,11 @@ def gfit(true, pred, num_decimal=3, plots='Yes', show_results='Yes'):
     rmse = math.sqrt(mse)
     bias = np.mean(diff)
 
-    r, p_value = pearsonr(true, pred)
+    # protect r
+    if np.std(true) < 1e-12 or np.std(pred) < 1e-12:
+        r, p_value = np.nan, np.nan
+    else:
+        r, p_value = pearsonr(true, pred)
     
     # Pearson correlation squared
     r2_simple = r ** 2
