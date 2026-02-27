@@ -2,7 +2,7 @@
 ![Visitors Badge](https://visitor-badge.laobi.icu/badge?page_id=RuiGao9/met_gfit)<br>
 
 # Model Evaluation Toolkit
-This repository is a tool to supports my research: evaluating and visualizing model performance.
+A streamlined Python toolkit for comprehensive model evaluation. met-gfit automates the calculation of 10 key statistical metrics and generates professional diagnostic plots (1:1 scatter, Residual, and Q-Q plots) to validate and visualize model accuracy with ease.
 
 ## Input
 - At minimum, you need to provide two vectors:
