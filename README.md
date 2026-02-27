@@ -1,5 +1,5 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18189307.svg)](https://doi.org/10.5281/zenodo.18189307)
-![Visitors Badge](https://visitor-badge.laobi.icu/badge?page_id=RuiGao9.met_gfit)<br>
+![Visitors Badge](https://visitor-badge.laobi.icu/badge?page_id=RuiGao9/met_gfit)<br>
 
 # Model Evaluation Toolkit
 This repository is a tool to supports my research: evaluating and visualizing model performance.
