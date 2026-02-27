@@ -54,39 +54,39 @@ Indicates how spread out the residuals (errors)
 # Equations
 **met_gfit** provides a comprehensive assessment of model performance, covering accuracy, precision, and agreement with observations. The following statistics are implemented:
 ### Mean Square Error ($MSE$)
-Measures the average of the squares of the errors, giving more weight to larger deviations (outliers).
+Measures the average of the squares of the errors, giving more weight to larger deviations (outliers).<br>
 $$MSE=\frac{1}{n}\sum_{i=1}^{n}(o_i-p_i)^2$$
 
 ### Root Mean Square Error ($RMSE$)
-Indicates how much the model’s predictions deviate from the observations on average.
+Indicates how much the model’s predictions deviate from the observations on average.<br>
 $$RMSE=\sqrt{\frac{\sum_{i=1}^{n}(o_i-\hat{p}_i)^2}{n}}$$
 
 ### Mean Bias ($Bias$)
-Measures the average tendency of the model to over- or under-estimate the observed values. A positive value indicates overestimation.
+Measures the average tendency of the model to over- or under-estimate the observed values. A positive value indicates overestimation.<br>
 $$Bias=\frac{1}{n}\sum_{i=1}^{n}(p_i-o_i)$$
 
 ### Pearson Correlation Coefficient ($r$)
-Indicates the strength and direction of the linear relationship between predicted and observed values. A correlation close to 1 or -1 indicates that the model captures the variability of observations well.
+Indicates the strength and direction of the linear relationship between predicted and observed values. A correlation close to 1 or -1 indicates that the model captures the variability of observations well.<br>
 $$r=\frac{cov{(o,p)}}{\sigma_o\sigma_p} $$
 
 ### Willmott's Index of Agreement ($d$)
-Considers both the mean absolute error and the variability of the observations, showing insight into how well the model replicates the variability and pattern of the observations (Willmott, 1982).
+Considers both the mean absolute error and the variability of the observations, showing insight into how well the model replicates the variability and pattern of the observations (Willmott, 1982).<br>
 $$d=1-\frac{\sum_{i=1}^{n}(o_i-p_i)^2}{\sum_{i=1}^{n}(|p_i-\bar{o}|+|o_i-\bar{o}|)^2}$$
 
 ### Coefficient of Determination ($R^2$)
-Quantifies the proportion of the variance in the observations that is predictable from the model, providing a rigorous measure of model fit.
+Quantifies the proportion of the variance in the observations that is predictable from the model, providing a rigorous measure of model fit.<br>
 $$R^2=1- \frac{\sum_{i=1}^{n}(o_i-\hat{p}_i)^2}{\sum_{i=1}^{n}(o_i-\bar{o})^2}$$
 
 ### Mean Absolute Error ($MAE$)
-Represents the average of the absolute differences between observations and predictions, providing a linear score where all individual differences are weighted equally.
+Represents the average of the absolute differences between observations and predictions, providing a linear score where all individual differences are weighted equally.<br>
 $$MAE=\frac{1}{n}\sum_{i=1}^{n}|o_i-p_i|$$
 
 ### Relative Root Mean Square Error ($RRMSE$)
-Normalizes the $RMSE$ by the mean of the observations, expressed as a percentage, which allows for comparison between different datasets or variables.
+Normalizes the $RMSE$ by the mean of the observations, expressed as a percentage, which allows for comparison between different datasets or variables.<br>
 $$RRMSE=\frac{RMSE}{\bar{o}}\times100\%$$
 
 ### Residual Standard Deviation ($RSD$)
-Quantifies the spread of the residuals (the differences between model and observations) around their mean.
+Quantifies the spread of the residuals (the differences between model and observations) around their mean.<br>
 $$RSD=\sqrt{\frac{\sum_{i=1}^{n}(p_i-o_i-\frac{1}{n}\sum_{i=1}^{n}(p_i-o_i))^2}{n-1}}$$
 
 where $o$ represents observations, $o_i$ is the observed value for the ith observations, $\bar{o}$ is the mean of observations, $p$ represents predictions, $p_i$ is the estimated value for the ith estimations, $\hat{p}_i$ is the estimated value corresponding to the ith observations, $n$ is the number of paired observations.
