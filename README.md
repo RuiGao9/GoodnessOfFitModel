@@ -1,25 +1,30 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18189307.svg)](https://doi.org/10.5281/zenodo.18189307)
-![Visitors Badge](https://visitor-badge.laobi.icu/badge?page_id=RuiGao9.GoodnessOfFitModel)<br>
+![Visitors Badge](https://visitor-badge.laobi.icu/badge?page_id=RuiGao9.met_gfit)<br>
 
-# Content of this repository
+# Model Evaluation Toolkit
 This repository is a tool to supports my research: evaluating and visualizing model performance.
 
-**Input:**
+## Input
 - At minimum, you need to provide two vectors:
   - `true`: observed (actual) values
   - `pred`: predicted values
 - Optional inputs allow you to control the number of decimal places for statistics and whether to generate plots.
 
-**Output:**
-- The main function (`gfit.py`) returns a set of goodness-of-fit statistics, including MSE, RMSE, MAE, R², correlation, bias, and more.
-- Optionally, you can generate plots to visualize model performance:
-  - 1:1 scatter plot (predicted vs. observed)
-  - Q-Q plot of residuals
-  - Residual plot
-
-The repository contains two files:
-- `gfit.py`: the main analysis function
-- `README.md`: this overview and usage guide
+## Comprehensive Evaluation
+The core function `gfit()` performs a full-scale diagnostic of your model, providing:
+- **12 Statistical Metrics**: Returns a dictionary/report containing $R^2$, $RMSE$, $MAE$, $Bias$, $r$, $d$-index, and more.
+- **Visual Diagnostics**: Optionally generates a professional three-panel figure including:
+  - **1:1 Scatter Plot**: Visualizes accuracy and potential scaling issues.
+  - **Residual Plot**: Checks for non-linearity and heteroscedasticity.
+  - Q-Q Plot: Evaluates the normality of the error distribution.
+## File Structure
+The repository is organized following the standard Python `src` layout for better compatibility and installation:
+- `src/met_gfit/`:
+  - `metrics.py`: The engine containing all mathematical formulas and plotting logic.
+  - `__init__.py`: The gateway that allows for clean imports (e.g., `from met_gfit import gfit`).
+- pyproject.toml: Project metadata and dependency specifications.
+- README.md: This comprehensive documentation and user guide.
+- LICENSE: MIT License for open-source use.
 
 # Considered goodness-of-fit statistics
 10 statistics are included in this function "gfit.py". They are:<br>
@@ -46,25 +51,69 @@ RMSE expressed as a percentage of the mean observed value.
 - `RSD`: The standard deviation of the residual. The unit is the same as the output variable.<br>
 Indicates how spread out the residuals (errors)
 
-# Citation
-If you also use this repository in your work, please cite it using the following DOI:
+# Equations
+**met_gfit** provides a comprehensive assessment of model performance, covering accuracy, precision, and agreement with observations. The following statistics are implemented:
+### Mean Square Error ($MSE$)
+Measures the average of the squares of the errors, giving more weight to larger deviations (outliers).
+$$MSE=\frac{1}{n}\sum_{i=1}^{n}(o_i-p_i)^2$$
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18189307.svg)](https://doi.org/10.5281/zenodo.18189307)
+### Root Mean Square Error ($RMSE$)
+Indicates how much the model’s predictions deviate from the observations on average.
+$$RMSE=\sqrt{\frac{\sum_{i=1}^{n}(o_i-\hat{p}_i)^2}{n}}$$
 
-**BibTeX:**
+### Mean Bias ($Bias$)
+Measures the average tendency of the model to over- or under-estimate the observed values. A positive value indicates overestimation.
+$$Bias=\frac{1}{n}\sum_{i=1}^{n}(p_i-o_i)$$
+
+### Pearson Correlation Coefficient ($r$)
+Indicates the strength and direction of the linear relationship between predicted and observed values. A correlation close to 1 or -1 indicates that the model captures the variability of observations well.
+$$r=\frac{cov{(o,p)}}{\sigma_o\sigma_p} $$
+
+### Willmott's Index of Agreement ($d$)
+Considers both the mean absolute error and the variability of the observations, showing insight into how well the model replicates the variability and pattern of the observations (Willmott, 1982).
+$$d=1-\frac{\sum_{i=1}^{n}(o_i-p_i)^2}{\sum_{i=1}^{n}(|p_i-\bar{o}|+|o_i-\bar{o}|)^2}$$
+
+### Coefficient of Determination ($R^2$)
+Quantifies the proportion of the variance in the observations that is predictable from the model, providing a rigorous measure of model fit.
+$$R^2=1- \frac{\sum_{i=1}^{n}(o_i-\hat{p}_i)^2}{\sum_{i=1}^{n}(o_i-\bar{o})^2}$$
+
+### Mean Absolute Error ($MAE$)
+Represents the average of the absolute differences between observations and predictions, providing a linear score where all individual differences are weighted equally.
+$$MAE=\frac{1}{n}\sum_{i=1}^{n}|o_i-p_i|$$
+
+### Relative Root Mean Square Error ($RRMSE$)
+Normalizes the $RMSE$ by the mean of the observations, expressed as a percentage, which allows for comparison between different datasets or variables.
+$$RRMSE=\frac{RMSE}{\bar{o}}\times100\%$$
+
+### Residual Standard Deviation ($RSD$)
+Quantifies the spread of the residuals (the differences between model and observations) around their mean.
+$$RSD=\sqrt{\frac{\sum_{i=1}^{n}(p_i-o_i-\frac{1}{n}\sum_{i=1}^{n}(p_i-o_i))^2}{n-1}}$$
+
+where $o$ represents observations, $o_i$ is the observed value for the ith observations, $\bar{o}$ is the mean of observations, $p$ represents predictions, $p_i$ is the estimated value for the ith estimations, $\hat{p}_i$ is the estimated value corresponding to the ith observations, $n$ is the number of paired observations.
+
+# Reference
+- Willmott, C. J. (1982). Some comments on the evaluation of model performance. Bulletin of the American Meteorological Society, 63(11), 1309-1313. https://doi.org/10.1175/1520-0477(1982)063<1309:SCOTEO>2.0.CO;2
+- Nash, J. E., & Sutcliffe, J. V. (1970). River flow forecasting through conceptual models part I — A discussion of principles. Journal of Hydrology, 10(3), 282-290. (For $NSE$/$R^2$ implementation).
+
+# Software Citation
+If you also use this repository in your work, please cite it using the following DOI:<br>
+**Gao, R. (2025).** *met_gfit: A Python toolkit for comprehensive model evaluation and diagnostic plotting.* Version 1.1.3. Zenodo: https://doi.org/10.5281/zenodo.18189307
+
+<summary><b>Click to copy BibTeX for citation</b></summary>
+
 ```bibtex
-@misc{gao2025goodfit,
+@misc{gao2025met_gfit,
   author       = {Rui Gao},
-  title        = {Goodness of Fit Model},
-  version      = v1.1.2,
+  title        = {met_gfit: A Python toolkit for comprehensive model evaluation and diagnostic plotting},
+  version      = v1.1.3,
   year         = {2025},
   publisher    = {Zenodo},
   doi          = {10.5281/zenodo.18189307},
-  url          = {https://doi.org/10.5281/zenodo.18189307}
+  url          = {[https://doi.org/10.5281/zenodo.18189307](https://doi.org/10.5281/zenodo.18189307)}
 }
 ```
 
-# Contact information is issues were found:
+# Contact information if issues were found:
 Any found issues are appreciated to contact Rui at<br> 
 Rui.Ray.Gao@gmail.com <br>
 RuiGao@UCMerced.edu <br>
