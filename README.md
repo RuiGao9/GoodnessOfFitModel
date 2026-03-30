@@ -1,5 +1,5 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18807443.svg)](https://doi.org/10.5281/zenodo.18807443)
-![Visitors Badge](https://visitor-badge.laobi.icu/badge?page_id=RuiGao9/met_gfit-123)<br>
+![Visitors Badge](https://visitor-badge.laobi.icu/badge?page_id=RuiGao9/met_gfit)<br>
 
 # Model Evaluation Toolkit
 A streamlined Python toolkit for comprehensive model evaluation. met-gfit automates the calculation of 10 key statistical metrics and generates professional diagnostic plots (1:1 scatter, Residual, and Q-Q plots) to validate and visualize model accuracy with ease.
@@ -12,7 +12,7 @@ A streamlined Python toolkit for comprehensive model evaluation. met-gfit automa
 
 ## Comprehensive Evaluation
 The core function `gfit()` performs a full-scale diagnostic of your model, providing:
-- **12 Statistical Metrics**: Returns a dictionary/report containing $R^2$, $RMSE$, $MAE$, $Bias$, $r$, $d$-index, and more.
+- **10 Statistical Metrics**: Returns a dictionary/report containing $R^2$, $RMSE$, $MAE$, $Bias$, $r$, $d$-index, and more.
 - **Visual Diagnostics**: Optionally generates a professional three-panel figure including:
   - **1:1 Scatter Plot**: Visualizes accuracy and potential scaling issues.
   - **Residual Plot**: Checks for non-linearity and heteroscedasticity.
