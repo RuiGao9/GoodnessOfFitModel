@@ -75,6 +75,7 @@ $$d=1-\frac{\sum_{i=1}^{n}(o_i-p_i)^2}{\sum_{i=1}^{n}(|p_i-\bar{o}|+|o_i-\bar{o}
 
 ### Coefficient of Determination ($R^2$)
 Quantifies the proportion of the variance in the observations that is predictable from the model, providing a rigorous measure of model fit.<br>
+
 $$R^2=1- \frac{\sum_{i=1}^{n}(o_i-\hat{p}_i)^2}{\sum_{i=1}^{n}(o_i-\bar{o})^2}$$
 
 ### Mean Absolute Error ($MAE$)
