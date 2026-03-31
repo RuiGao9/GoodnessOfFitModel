@@ -1,5 +1,5 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18807443.svg)](https://doi.org/10.5281/zenodo.18807443)
-![Visitors Badge](https://visitor-badge.laobi.icu/badge?page_id=RuiGao9/met_gfit-123)<br>
+![Visitors Badge](https://visitor-badge.laobi.icu/badge?page_id=RuiGao9/met_gfit)<br>
 
 # met_gfit: A Python Toolkit for Comprehensive Model evaluation and Diagnostic Plotting
 A streamlined Python toolkit for comprehensive model evaluation. met-gfit automates the calculation of 10 key statistical metrics and generates professional diagnostic plots (1:1 scatter, Residual, and Q-Q plots) to validate and visualize model accuracy with ease.
