@@ -1,14 +1,54 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18807443.svg)](https://doi.org/10.5281/zenodo.18807443)
-![Visitors Badge](https://visitor-badge.laobi.icu/badge?page_id=RuiGao9/met_gfit)<br>
+![Visitors Badge](https://visitor-badge.laobi.icu/badge?page_id=RuiGao9/met_gfit-123)<br>
 
-# Model Evaluation Toolkit
+# met_gfit: A Python Toolkit for Comprehensive Model evaluation and Diagnostic Plotting
 A streamlined Python toolkit for comprehensive model evaluation. met-gfit automates the calculation of 10 key statistical metrics and generates professional diagnostic plots (1:1 scatter, Residual, and Q-Q plots) to validate and visualize model accuracy with ease.
 
-## Input
+## Toolkit installation
+```bash
+pip install "git+https://github.com/RuiGao9/met_gfit.git"
+```
+## Toolkit inputs
 - At minimum, you need to provide two vectors:
   - `true`: observed (actual) values
   - `pred`: predicted values
 - Optional inputs allow you to control the number of decimal places for statistics and whether to generate plots.
+
+## Toolkit usage example
+Please refer to `test.ipynb` under the `test` folder. Or refer to below:
+```python
+import numpy as np
+from met_gfit import gfit, rmse 
+
+obs = [1, 2, np.nan, 
+       4, 5, 5.5, 
+       4.8, 6.1, 5.0, 
+       3.3, 1.7, 2.5] 
+sim = [1.1, 1.9, 6,
+       3.8, 5.1, 5.4,
+       np.nan, 6.0, 5.2,
+       np.nan, 1.5, 2.7]
+
+val = rmse(obs, sim) 
+all_stats = gfit(obs, sim, plots='No', show_results='No')
+
+# With more data points and some noise
+np.random.seed(42)
+# Create a larger dataset with 1000 samples
+obs = np.linspace(0, 100, 1000)
+noise = np.random.normal(0, 5, 1000)
+bias = 1.3                          
+sim = obs + noise + bias
+# Add some NaN and Inf values randomly
+nan_indices = np.random.choice(range(1000), 10, replace=False)
+obs[nan_indices] = np.nan
+# Add some Inf values randomly
+inf_indices = np.random.choice(range(1000), 5, replace=False)
+sim[inf_indices] = np.inf
+
+# Showing the results
+results = gfit(obs, sim, num_decimal=4)
+```
 
 ## Comprehensive Evaluation
 The core function `gfit()` performs a full-scale diagnostic of your model, providing:
