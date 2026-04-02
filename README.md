@@ -1,5 +1,5 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18807443.svg)](https://doi.org/10.5281/zenodo.18807443)
-![Visitors Badge](https://visitor-badge.laobi.icu/badge?page_id=RuiGao9/met_gfit)<br>
+![Visitors Badge](https://visitor-badge.laobi.icu/badge?page_id=RuiGao9/met_gfit-123)<br>
 
 # met_gfit: A Python Toolkit for Comprehensive Model evaluation and Diagnostic Plotting
 A streamlined Python toolkit for comprehensive model evaluation. met-gfit automates the calculation of 10 key statistical metrics and generates professional diagnostic plots (1:1 scatter, Residual, and Q-Q plots) to validate and visualize model accuracy with ease.
@@ -111,7 +111,10 @@ $$Bias=\frac{1}{n}\sum_{i=1}^{n}(p_i-o_i)$$
 ### Pearson Correlation Coefficient ($r$)
 Indicates the strength and direction of the linear relationship between predicted and observed values. A correlation close to 1 or -1 indicates that the model captures the variability of observations well.<br>
 
-$$r=\frac{cov{(o,p)}}{\sigma_o\sigma_p} $$
+$$r=\frac{\sum{(o_i-\bar{o})(p_i-\bar{p})}}{\sqrt{\sum{(o_i-\bar{o})}^2 \cdot \sum{(p_i-\bar{p})}^2}}=\frac{cov{(o,p)}}{\sigma_o\sigma_p}$$
+
+*Notes:* In EXCEL, the $R^2$ value (via the `RSQ` function) represents the squared Pearson correlation coefficient ($r^2$). This metric quantifies the degree of linear correlation between observations ($o$) and predictions ($p$). In contrast, the standard **Coefficient of Determination** evaluates the predictive accuracy by accounting for systematic biases.
+$$R^2=r^2=[\frac{\sum{(o_i-\bar{o})(p_i-\bar{p})}}{\sqrt{\sum{(o_i-\bar{o})}^2 \cdot \sum{(p_i-\bar{p})}^2}}]^2$$
 
 ### Willmott's Index of Agreement ($d$)
 Considers both the mean absolute error and the variability of the observations, showing insight into how well the model replicates the variability and pattern of the observations (Willmott, 1982).<br>
