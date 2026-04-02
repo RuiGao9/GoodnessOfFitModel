@@ -1,5 +1,5 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18807443.svg)](https://doi.org/10.5281/zenodo.18807443)
-![Visitors Badge](https://visitor-badge.laobi.icu/badge?page_id=RuiGao9/met_gfit-123)<br>
+![Visitors Badge](https://visitor-badge.laobi.icu/badge?page_id=RuiGao9/met_gfit)<br>
 
 # met_gfit: A Python Toolkit for Comprehensive Model evaluation and Diagnostic Plotting
 A streamlined Python toolkit for comprehensive model evaluation. met-gfit automates the calculation of 10 key statistical metrics and generates professional diagnostic plots (1:1 scatter, Residual, and Q-Q plots) to validate and visualize model accuracy with ease.
@@ -124,7 +124,7 @@ $$d=1-\frac{\sum_{i=1}^{n}(o_i-p_i)^2}{\sum_{i=1}^{n}(|p_i-\bar{o}|+|o_i-\bar{o}
 ### Coefficient of Determination ($R^2$)
 Quantifies the proportion of the variance in the observations that is predictable from the model, providing a rigorous measure of model fit.<br>
 
-$$R^2=1- \frac{\sum_{i=1}^{n}(o_i-\hat{p}_i)^2}{\sum_{i=1}^{n}(o_i-\bar{o})^2}$$
+$$R^2=1- \frac{\sum_{i=1}^{n}(o_i-\hat{p}_i)^2}{\sum_{i=1}^{n}(o_i-\bar{o})^2}=1-\frac{SS_{res}}{SS_{tot}}$$
 
 ### Mean Absolute Error ($MAE$)
 Represents the average of the absolute differences between observations and predictions, providing a linear score where all individual differences are weighted equally.<br>
