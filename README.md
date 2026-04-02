@@ -18,7 +18,7 @@ pip install "git+https://github.com/RuiGao9/met_gfit.git"
 Please refer to `test.ipynb` under the `test` folder. Or refer to below:
 ```python
 import numpy as np
-from met_gfit import gfit, rmse 
+from met_gfit import gfit
 
 obs = [1, 2, np.nan, 
        4, 5, 5.5, 
