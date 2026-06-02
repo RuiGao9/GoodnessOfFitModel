@@ -16,14 +16,15 @@ def gfit(true, pred, num_decimal=3, plots='Yes', show_results='Yes'):
         2. Mean Square Error (MSE)
         3. Root Mean Square Error (RMSE)
         4. Bias
-        5. Pearson correlation coefficient (r)
-        6. p-value of the correlation
-        7. r-squared (Pearson^2)
-        8. Standard R-squared (R2)
-        9. Willmott's index of agreement (d)
-        10. Mean Absolute Error (MAE)
-        11. Relative RMSE (RRMSE)
-        12. Standard Deviation of Residuals (RSD)
+        5. Percentage Bias (PBIAS)
+        6. Pearson correlation coefficient (r)
+        7. p-value of the correlation
+        8. r-squared (Pearson^2)
+        9. Standard R-squared (R2)
+        10. Willmott's index of agreement (d)
+        11. Mean Absolute Error (MAE)
+        12. Relative RMSE (RRMSE)
+        13. Standard Deviation of Residuals (RSD)
     """
     import numpy as np
     import matplotlib.pyplot as plt
