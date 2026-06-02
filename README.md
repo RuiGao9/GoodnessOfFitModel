@@ -166,7 +166,7 @@ If you also use this repository in your work, please cite it using the following
 
 ```bibtex
 @misc{gao2025met_gfit,
-  author       = {Rui Gao},
+  author       = {Gao, Rui},
   title        = {met_gfit: A Python toolkit for comprehensive model evaluation and diagnostic plotting},
   version      = v1.1.4,
   year         = {2026},
