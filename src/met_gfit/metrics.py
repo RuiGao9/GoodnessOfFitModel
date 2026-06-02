@@ -59,7 +59,12 @@ def rmse(true, pred):
 # 3. Bias (Mean Error)
 def bias(true, pred):
     return np.mean(np.asarray(true) - np.asarray(pred))
-# 4. Pearson's r and p-value
+# 4. PBIAS (Percent Bias)
+def pbias(true, pred):
+    t, p = np.asarray(true), np.asarray(pred)
+    sum_t = np.sum(t)
+    return (100 * np.sum(p - t) / sum_t) if sum_t != 0 else np.nan
+# 5. Pearson's r and p-value
 # Pearson r can be undefined / numerically unstable when either series is (nearly) constant
 # (std close to 0 makes the correlation denominator ~0). In that case we return NaN to avoid misleading r/p-values.
 def pearson_r(true, pred):
@@ -67,11 +72,11 @@ def pearson_r(true, pred):
     if np.std(t) < 1e-8 or np.std(p) < 1e-8:
         return np.nan, np.nan
     return pearsonr(t, p)
-# 5. Pearson correlation squared
+# 6. Pearson correlation squared
 def r2_simple(true, pred):
     r, _ = pearson_r(true, pred)
     return r**2
-# 6. Standard $R^2$ (Coefficient of Determination)
+# 7. Standard $R^2$ (Coefficient of Determination)
 # R squared value (standard) in sklearn style
 # Standard R2 becomes undefined / unstable when the target variance is (near) zero (SS_tot close to 0).
 # We guard against this and return NaN instead of reporting a meaningless $R^2$.
@@ -80,22 +85,22 @@ def r2_standard(true, pred):
     ss_res = np.sum((t - p) ** 2)
     ss_tot = np.sum((t - np.mean(t)) ** 2)
     return 1 - (ss_res / ss_tot) if ss_tot > 1e-8 else np.nan
-# 7. MAE (Mean Absolute Error)
+# 8. MAE (Mean Absolute Error)
 def mae(true, pred):
     return np.mean(np.abs(np.asarray(true) - np.asarray(pred)))
-# 8. RRMSE (Relative Root Mean Squared Error)
+# 9. RRMSE (Relative Root Mean Squared Error)
 def rrmse(true, pred):
     t = np.asarray(true)
     m = np.mean(t)
     return (rmse(t, pred) / m * 100) if m != 0 else np.nan
-# 9. Willmott's d index
+# 10. Willmott's d index
 def d_index(true, pred):
     t, p = np.asarray(true), np.asarray(pred)
     mean_t = np.mean(t)
     num = np.sum((t - p)**2)
     den = np.sum((np.abs(p - mean_t) + np.abs(t - mean_t))**2)
     return 1 - (num / den) if den != 0 else np.nan
-# 10. RSD (Residual Standard Deviation)
+# 11. RSD (Residual Standard Deviation)
 def rsd(true, pred):
     return np.std(np.asarray(true) - np.asarray(pred))
 
@@ -189,6 +194,7 @@ def gfit(true, pred, num_decimal=3, plots='Yes', show_results='Yes'):
     mse_val = mse(t_clean, p_clean)
     rmse_val = rmse(t_clean, p_clean)
     bias_val = bias(t_clean, p_clean)
+    pbias_val = pbias(t_clean, p_clean)
     r_val, p_val = pearson_r(t_clean, p_clean)
     r2_s = r2_simple(t_clean, p_clean)
     r2_std = r2_standard(t_clean, p_clean)
@@ -215,6 +221,7 @@ def gfit(true, pred, num_decimal=3, plots='Yes', show_results='Yes'):
         print(f"RMSE:           {rmse_val:{fmt}}")
         print(f"RRMSE:          {rrmse_val:{fmt}}")
         print(f"Bias:           {bias_val:{fmt}}")
+        print(f"PBIAS:          {pbias_val:{fmt}}%")
         print(f"MAE:            {mae_val:{fmt}}")
         print(f"Standard R2:    {r2_std:{fmt}}")
         print(f"Simple R2:      {r2_s:{fmt}}")
@@ -223,4 +230,4 @@ def gfit(true, pred, num_decimal=3, plots='Yes', show_results='Yes'):
         print(f"RSD:            {rsd_val:{fmt}}")
         print("="*40 + "\n")
 
-    return (n_val, mse_val, rmse_val, bias_val, r_val, p_val, r2_s, r2_std, d_val, mae_val, rrmse_val, rsd_val)
+    return (n_val, mse_val, rmse_val, bias_val, pbias_val, r_val, p_val, r2_s, r2_std, d_val, mae_val, rrmse_val, rsd_val)
