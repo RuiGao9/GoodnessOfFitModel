@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18807443.svg)](https://doi.org/10.5281/zenodo.18807443)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20513771.svg)](https://doi.org/10.5281/zenodo.20513771)
 ![Stars](https://img.shields.io/github/stars/RuiGao9/met_gfit?style=social)<br>
 
 # met_gfit: A Python Toolkit for Comprehensive Model evaluation and Diagnostic Plotting
@@ -160,7 +160,7 @@ where $o$ represents observations, $o_i$ is the observed value for the ith obser
 
 # Software Citation
 If you also use this repository in your work, please cite it using the following DOI:<br>
-**Gao, R. (2025).** *met_gfit: A Python toolkit for comprehensive model evaluation and diagnostic plotting.* Version 1.1.3. Zenodo: https://doi.org/10.5281/zenodo.18807443
+**Gao, R. (2026).** *met_gfit: A Python toolkit for comprehensive model evaluation and diagnostic plotting.* Version 1.1.4. Zenodo: https://doi.org/10.5281/zenodo.20513771
 
 <summary><b>Click to copy BibTeX for citation</b></summary>
 
@@ -168,11 +168,11 @@ If you also use this repository in your work, please cite it using the following
 @misc{gao2025met_gfit,
   author       = {Rui Gao},
   title        = {met_gfit: A Python toolkit for comprehensive model evaluation and diagnostic plotting},
-  version      = v1.1.3,
-  year         = {2025},
+  version      = v1.1.4,
+  year         = {2026},
   publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.18189307},
-  url          = {[https://doi.org/10.5281/zenodo.18807443](https://doi.org/10.5281/zenodo.18807443)}
+  doi          = {10.5281/zenodo.20513771},
+  url          = {[https://doi.org/10.5281/zenodo.20513771](https://doi.org/10.5281/zenodo.20513771)}
 }
 ```
 
