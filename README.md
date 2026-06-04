@@ -116,6 +116,7 @@ $$Bias=\frac{1}{n}\sum_{i=1}^{n}(p_i-o_i)$$
 
 ### Percentage Bias ($PBIAS$)
 Measures the average tendency of the prediction to be larger or smaller than their observed values.
+
 $$PBIAS = \frac{\sum_{i=1}^{n} (p_i - o_i)}{\sum_{i=1}^{n} o_i} \times 100$$
 
 ### Pearson Correlation Coefficient ($r$)
