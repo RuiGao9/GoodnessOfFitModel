@@ -79,7 +79,7 @@ Measures the average tendency of the prediction to be larger or smaller than the
   * $|PBIAS| < 10$\%: Very Good
   * $10$\% $\le |PBIAS| < 15$\%: Good
   * $15$\% $\le |PBIAS| < 25$\%: Satisfactory
-  * $|PBIAS|$ $\ge$ 25\%: Unsatisfactory
+  * $|PBIAS|$ $\ge 25$\%: Unsatisfactory
 - `r`: Correlation coefficient. Unitless.<br>
 Measures the strength and direction of the linear relationship between observed and predicted values (ranges from -1 to 1).
 - `p-value`: p-value. Unitless.<br>
