@@ -76,10 +76,10 @@ The square root of MSE; shows the **average error** in the same units as the dat
 The average difference between predicted and observed values. Indicates if predictions are systematically too high or too low.
 - `PBIAS`: Percentage Bias. The unit is %.<br>
 Measures the average tendency of the prediction to be larger or smaller than the corresponding observed objective.
-  - $|PBIAS| < 10\%$: Very Good
-  - $10\% \le |PBIAS| < 15\%$: Good
-  - $15\% \le |PBIAS| < 25\%$: Satisfactory
-  - $|PBIAS| \ge 25\%$: Unsatisfactory
+  - $|PBIAS| < 10\%$: Very Good <br>
+  - $10\% \le |PBIAS| < 15\%$: Good <br>
+  - $15\% \le |PBIAS| < 25\%$: Satisfactory <br>
+  - $|PBIAS| \ge 25\%$: Unsatisfactory <br>
 - `r`: Correlation coefficient. Unitless.<br>
 Measures the strength and direction of the linear relationship between observed and predicted values (ranges from -1 to 1).
 - `p-value`: p-value. Unitless.<br>
