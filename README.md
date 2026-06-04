@@ -77,7 +77,7 @@ The average difference between predicted and observed values. Indicates if predi
 - `PBIAS`: Percentage Bias. The unit is %.<br>
 Measures the average tendency of the prediction to be larger or smaller than the corresponding observed objective.
   * $|PBIAS| < 10\%$: Very Good
-  * $10\% \le |PBIAS| < 15\%$: Good
+  * ${10\% \le |PBIAS| < 15\%}$: Good
   * $15\% \le |PBIAS| < 25\%$: Satisfactory
   * $|PBIAS| \ge 25\%$: Unsatisfactory
 - `r`: Correlation coefficient. Unitless.<br>
