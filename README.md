@@ -126,6 +126,7 @@ $$r=\frac{\sum{(o_i-\bar{o})(p_i-\bar{p})}}{\sqrt{\sum{(o_i-\bar{o})}^2 \cdot \s
 
 *Notes:* In EXCEL, the $R^2$ value (via the `RSQ` function) represents the squared Pearson correlation coefficient ($r^2$). This metric quantifies the degree of linear correlation between observations ($o$) and predictions ($p$). In contrast, the standard **Coefficient of Determination** evaluates the predictive accuracy by accounting for systematic biases.<br>
 The Excel workbook `R_Square_Calculation.xlsx` provides a comparative example demonstrating the discrepancy between Excel's default $R^2$ calculation (**Pearson's $r^2$**) and the standard **Coefficient of Determination ($1 - SS_{res}/SS_{tot}$)**.
+
 $$R^2=r^2=[\frac{\sum{(o_i-\bar{o})(p_i-\bar{p})}}{\sqrt{\sum{(o_i-\bar{o})}^2 \cdot \sum{(p_i-\bar{p})}^2}}]^2$$
 
 ### Willmott's Index of Agreement ($d$)
