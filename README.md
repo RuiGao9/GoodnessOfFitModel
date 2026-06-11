@@ -1,4 +1,6 @@
-
+<div align="center">
+  <img src="met_gfit.JPG" width="100%" style="display: block; margin: 0;" >
+</div>
 
 # met_gfit: A Python Toolkit for Comprehensive Model evaluation and Diagnostic Plotting
 A streamlined Python toolkit for comprehensive model evaluation. met-gfit automates the calculation of 10 key statistical metrics and generates professional diagnostic plots (1:1 scatter, Residual, and Q-Q plots) to validate and visualize model accuracy with ease.
@@ -179,5 +181,4 @@ If you also use this repository in your work, please cite it using the following
 
 # Contact information if issues were found:
 Any found issues are appreciated to contact Rui at<br> 
-Rui.Ray.Gao@gmail.com <br>
-RuiGao@UCMerced.edu <br>
+Rui.Ray.Gao@gmail.com or RuiGao@UCMerced.edu <br>
